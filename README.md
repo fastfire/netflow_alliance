@@ -38,6 +38,13 @@ The adherence to RFC 3954 by different vendors is crucial for several reasons:
 
 NetFlow stands as a pillar of network traffic analysis, providing valuable insights that empower network administrators to optimize their networks for performance and security. The importance of adhering to standards like RFC 3954 cannot be understated; it ensures a harmonious network environment, where data from diverse sources can be seamlessly integrated and analyzed. As technology continues to evolve, the role of NetFlow and its standardized implementations will remain pivotal in the ever-changing landscape of network management and security.
 
+## How to contribute?
+Contributing to the project is very easy!
+- Enable NetFlows on your device by setting a recipient ($recipient_ip and $recipient_port) to which the flows will be sent.
+- On the recipient catch NetFlow traffic using tcpdump (tcpdump -i $interface host $recipient_ip and $recipient_port -w netflow.pcap).
+- Use Wireshark to check which fields are present in the streams (in Wireshark, from the "Analyze" menu select "Decode As...", add a field and as "Current" choose "CFLOW".
+- Make a pull request on the project indicating, for your device vendor, which fields you have detected (🟩 - Implemented) and which you have not detected (🟥 - Non Implemented).
+
 
 RFC 3954 Compliance Comparison Table
 -----------------------------------
@@ -55,7 +62,7 @@ This table shows the compliance of major vendors' NetFlow implementations with w
 | ❓     	| Pending                	| Pending Response
 <br>
 
-**Last Updated:** Fri August 17 2023\
+**Last Updated:** Fri August 17 2023
 | **Filed Type** | **Description**            | **Cisco (ASA)** | **Fortigate** | **pfSense** | **Radware (Alteon)** | **Palo Alto** | **Check Point** | **Watchguard** | **Juniper** | **SonicWall** | **Sophos** | **Barracuda** | **Force Point** |
 |:------------------------------:|:---------------------------:|:----------------:|:---------------:|:--------------:|:----------------:|:-----------:|:---------------:|:-------:|:----------------:|:----------:|:-----------:|:---------------:|:--------------:|
 | **IN_BYTES**           | Description            | ❓               | ❓              | ❓             | ❓               | ❓          | ❓              | ❓      | ❓               | ❓         | ❓          | ❓              | ❓             |
